@@ -1,4 +1,5 @@
 import Twit, { Twitter } from 'twit';
+import {createServer} from 'http';
 
 const BOT_NAME = process.env.BOT_NAME || '@satirify';
 const twit = new Twit({
@@ -29,3 +30,6 @@ twit.stream('statuses/filter', {track: BOT_NAME})
             console.error(e);
         }     
     });
+
+// To check if server is alive
+createServer((req, res) => res.writeHead(200, {'Content-Type': 'text/plain'}).end('ok')).listen(process.env.PORT || 3000);
