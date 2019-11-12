@@ -1,0 +1,23 @@
+{
+  "name": "satirical-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.7",
+    "@types/twit": "^2.2.23",
+    "typescript": "^3.7.2"
+  }
+}
