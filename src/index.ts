@@ -2,6 +2,7 @@ import Twit, { Twitter } from 'twit';
 import {createServer} from 'http';
 
 const BOT_NAME = process.env.BOT_NAME || '@satirify';
+
 const twit = new Twit({
     access_token: process.env.ACCESS_TOKEN,
     access_token_secret: process.env.ACCESS_TOKEN_SECRET,
@@ -11,6 +12,7 @@ const twit = new Twit({
 
 const satirify = (s: string): string => s.split('').reduce((a: string, l: string, i: number) => a += (i % 2) ? l.toUpperCase() : l.toLowerCase(), '');
 
+// Handle new mention
 twit.stream('statuses/filter', {track: BOT_NAME})
     .on('connect', () => console.log(`Connected, listenning to ${BOT_NAME}.`))
     .on('disconnect', () => console.log(`Disconnected.`))
