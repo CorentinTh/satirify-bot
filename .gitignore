@@ -4,3 +4,6 @@ dist
 build
 .cache
 .env
+*.log
+*.logs
+*.img
