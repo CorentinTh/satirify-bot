@@ -9,7 +9,11 @@ To mock a tweet, simply respond to it mentionning [`@satirify`](https://twitter.
 ## Make your own
 ### With docker
 
-*Comming soon*
+```shell
+docker build https://github.com/CorentinTh/satirify-bot.git -t corentinth/satirify-bot
+
+docker run -d corentinth/satirify-bot
+```
 
 ### Without docker
 
