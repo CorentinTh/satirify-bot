@@ -18,7 +18,7 @@ twit
     .on('disconnect', () => console.log(`Disconnected.`))
     .on('tweet', async (mention: Twitter.Status) => {
         try {
-            if (mention.in_reply_to_status_id_str) {
+            if (mention.in_reply_to_status_id_str && mention.in_reply_to_status_id_str !== '') {
                 const original: Twitter.Status = <Twitter.Status>(await twit.get('statuses/show/:id', { id: mention.in_reply_to_status_id_str })).data;
 
                 if (original.text) {
